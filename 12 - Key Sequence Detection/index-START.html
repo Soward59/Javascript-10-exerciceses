@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+let secretCode = [74,79,89,67,69] //Secret code with keynumber == joyce
+let input = []
+window.addEventListener('keyup', (e)=> { //add a event list 'keyup'
+	console.log(e.keyCode)//add a console for see if when we tap the code with have a return.
+	input.push(e.keyCode)
+	input.splice(-secretCode.length - 1, input.length - secretCode.length)
+	if(input.join() === secretCode.join()) {
+		console.log('DING DING!')//If the secret code is correct, a message is displayed in the console
+		cornify_add()
+	}
+	console.log(input)
+	console.log(secretCode)
+})
+</script>
+</body>
+</html>
